@@ -442,6 +442,7 @@ GEM
 PLATFORMS
   java
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   activeadmin!
@@ -484,4 +485,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   2.2.0.rc.2
+   2.1.4
