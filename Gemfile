@@ -21,8 +21,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "cuprite", "0.11"
-  gem "ferrum", github: "deivid-rodriguez/ferrum", branch: "timeout-error-output"
+  gem "apparition"
   gem "capybara", "~> 3.14"
   gem "db-query-matchers", "0.10.0"
 

@@ -40,13 +40,13 @@ After do |scenario|
   # :nocov:
 end
 
-require "capybara/cuprite"
+require "capybara/apparition"
 
-Capybara.register_driver(:cuprite) do |app|
-  Capybara::Cuprite::Driver.new(app, browser_options: { 'no-sandbox': nil }, process_timeout: 30)
+Capybara.register_driver(:apparition) do |app|
+  Capybara::Apparition::Driver.new(app, browser_options: { 'no-sandbox': nil }, timeout: 30)
 end
 
-Capybara.javascript_driver = :cuprite
+Capybara.javascript_driver = :apparition
 
 Capybara.server = :webrick
 

@@ -50,11 +50,6 @@ jobs:
       - name: Create test app
         run: COVERAGE=true PARALLEL_TEST_PROCESSORS=4 bin/rake setup
 
-      - name: Run RSpec tests
-        run: |
-          COVERAGE=true PARALLEL_TEST_PROCESSORS=4 PARALLEL_TEST_HEARTBEAT_INTERVAL=3600 bin/parallel_rspec spec/
-          COVERAGE=true RSPEC_FILESYSTEM_CHANGES=true bin/rspec
-
       - name: Run Cucumber features
         run: |
           COVERAGE=true PARALLEL_TEST_PROCESSORS=4 PARALLEL_TEST_HEARTBEAT_INTERVAL=3600 bin/parallel_cucumber features/
