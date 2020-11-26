@@ -19,7 +19,20 @@ jobs:
       matrix:
         ruby: [2.7.1, 2.6.6]
 
-        deps: ["rails_60"]
+        deps: ["rails_52", "rails_60", "rails_60_turbolinks", "rails_60_webpacker"]
+
+        include:
+          - ruby: 2.5.8
+            deps: rails_52
+
+          - ruby: 2.5.8
+            deps: rails_60
+
+          - ruby: jruby-9.2.13.0
+            deps: rails_52
+
+          - ruby: jruby-9.2.13.0
+            deps: rails_60
 
     steps:
       - uses: actions/checkout@v2
@@ -70,7 +83,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: coverage
-          path: codeclimate.{{ matrix.ruby }}.{{ matrix.deps }}.json
+          path: codeclimate.${{ matrix.ruby }}.${{ matrix.deps }}.json
 
   upload_coverage:
     runs-on: ubuntu-20.04
