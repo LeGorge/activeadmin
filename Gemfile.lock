@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/deivid-rodriguez/ferrum.git
-  revision: 11c83fbeacaa9b06b861f0d7f11eb2cf81cdaee2
+  revision: ec03bb392984910ec5a81175c0f566d2af77a1f1
   branch: timeout-error-output
   specs:
     ferrum (0.9)
