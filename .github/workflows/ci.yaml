@@ -67,6 +67,12 @@ jobs:
           bin/test-reporter format-coverage --output coverage/codeclimate.${{ matrix.ruby }}.$${{ matrix.deps }}.json
 
       - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: screenshots
+          path: tmp/test_apps/${{ matrix.deps }}/tmp/capybara
+
+      - uses: actions/upload-artifact@v2
         with:
           name: coverage
           path: codeclimate.{{ matrix.ruby }}.{{ matrix.deps }}.json

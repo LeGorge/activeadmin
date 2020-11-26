@@ -27,11 +27,7 @@ Around "@mocks" do |scenario, block|
   end
 end
 
-After "@debug" do |scenario|
-  # :nocov:
-  save_and_open_page if scenario.failed?
-  # :nocov:
-end
+require "capybara-screenshot/cucumber"
 
 require "capybara/cuprite"
 
