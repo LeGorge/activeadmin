@@ -43,7 +43,7 @@ end
 require "capybara/cuprite"
 
 Capybara.register_driver(:cuprite) do |app|
-  Capybara::Cuprite::Driver.new(app, browser_options: { 'no-sandbox': nil }, process_timeout: 5)
+  Capybara::Cuprite::Driver.new(app, browser_options: { 'no-sandbox': nil }, process_timeout: 30)
 end
 
 Capybara.javascript_driver = :cuprite
