@@ -50,6 +50,11 @@ Before "@javascript" do
 end
 
 require "capybara/cuprite"
+
+Capybara.register_driver(:cuprite) do |app|
+  Capybara::Cuprite::Driver.new(app, browser_options: { 'no-sandbox': nil })
+end
+
 Capybara.javascript_driver = :cuprite
 
 Capybara.server = :webrick
