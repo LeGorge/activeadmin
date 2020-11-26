@@ -27,7 +27,18 @@ Around "@mocks" do |scenario, block|
   end
 end
 
-require "capybara-screenshot/cucumber"
+After do |scenario|
+  # :nocov:
+  if scenario.failed?
+    name = scenario.name.tr(" ", "_").downcase
+    image_path = "#{Capybara.save_path}/#{name}.png"
+    save_screenshot(image_path)
+    html_path = "#{Capybara.save_path}/#{name}.html"
+    save_page(html_path)
+    log "Image screenshot: #{image_path}\nHTML screenshot: #{html_path}"
+  end
+  # :nocov:
+end
 
 require "capybara/cuprite"
 
