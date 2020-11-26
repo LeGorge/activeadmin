@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/deivid-rodriguez/ferrum.git
+  revision: 11c83fbeacaa9b06b861f0d7f11eb2cf81cdaee2
+  branch: timeout-error-output
+  specs:
+    ferrum (0.9)
+      addressable (~> 2.5)
+      cliver (~> 0.3)
+      concurrent-ruby (~> 1.1)
+      websocket-driver (>= 0.6, < 0.8)
+
 PATH
   remote: .
   specs:
@@ -169,11 +180,6 @@ GEM
     faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
-    ferrum (0.9)
-      addressable (~> 2.5)
-      cliver (~> 0.3)
-      concurrent-ruby (~> 1.1)
-      websocket-driver (>= 0.6, < 0.8)
     ffi (1.13.1)
     ffi (1.13.1-java)
     formtastic (4.0.0.rc1)
@@ -456,6 +462,7 @@ DEPENDENCIES
   db-query-matchers (= 0.10.0)
   devise
   draper (~> 4.0)
+  ferrum!
   formtastic (~> 4.0.rc1)
   i18n-spec
   i18n-tasks
